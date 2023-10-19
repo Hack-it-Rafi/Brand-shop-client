@@ -10,6 +10,7 @@ import Root from './Components/Root';
 import AddProduct from './Components/AddProduct';
 import MyCart from './Components/MyCart';
 import BrandAd from './Components/BrandAd';
+import ProductDetails from './Components/ProductDetails';
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,11 @@ const router = createBrowserRouter([
         path: "/brandAd/:name",
         element: <BrandAd></BrandAd>,
         loader: ()=>fetch("http://localhost:5000/brands")
+      },
+      {
+        path: "/productDetails/:id",
+        element: <ProductDetails></ProductDetails>,
+        loader: ()=>fetch("http://localhost:5000/products")
       }
     ]
   },

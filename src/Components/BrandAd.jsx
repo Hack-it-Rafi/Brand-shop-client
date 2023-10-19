@@ -30,10 +30,10 @@ const BrandAd = () => {
             setProducts(data);          
         })
     },[])
-        console.log(loadedProducts[0].brand);
+        // console.log(loadedProducts[0].brand);
     const products = loadedProducts.filter(product=>product.brand?.toLowerCase()==lowerName)
 
-    console.log(products);
+    // console.log(products);
     return (
         <div className=''>
             <div className='h-28'>
