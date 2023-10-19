@@ -1,0 +1,33 @@
+[
+    {
+      "name": "Apple",
+      "image": "https://www.transparentpng.com/thumb/apple-logo/AoKYpC-apple-logo-png-icon.png",
+      "id": 1
+    },
+    {
+      "name": "Samsung",
+      "image": "https://i.ibb.co/TWFJppt/Png-Item-1099875.png",
+      "id": 2
+    },
+    {
+      "name": "Sony",
+      "image": "https://www.transparentpng.com/thumb/sony/background-transparent-sony-logo-25.png",
+      "id": 3
+    },
+    {
+      "name": "Google",
+      "image": "https://www.transparentpng.com/thumb/google-logo/colorful-google-logo-transparent-clipart-download-u3DWLj.png",
+      "id": 4
+    },
+    {
+      "name": "Intel",
+      "image": "https://www.transparentpng.com/thumb/logo/ywJH2o-intel-logo-image-processor-quality.png",
+      "id": 5
+    },
+    {
+      "name": "Huawei",
+      "image": "https://i.ibb.co/x5bwmrm/kisspng-huawei-mate-9-logo-huawei-logo-5b214fcca7ebe3-1981042815289097726878.png",
+      "id": 6
+    }
+  ]
+  
