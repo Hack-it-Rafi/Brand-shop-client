@@ -7,6 +7,9 @@ import {
 } from "react-router-dom";
 import Home from './Components/Home';
 import Root from './Components/Root';
+import AddProduct from './Components/AddProduct';
+import MyCart from './Components/MyCart';
+import BrandAd from './Components/BrandAd';
 
 const router = createBrowserRouter([
   {
@@ -17,6 +20,19 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home></Home>,
         loader: ()=>fetch('Brands.json')
+      },
+      {
+        path: "/addProduct",
+        element:<AddProduct></AddProduct>
+      },
+      {
+        path: "/myCart",
+        element: <MyCart></MyCart>
+      },
+      {
+        path: "/brandAd/:name",
+        element: <BrandAd></BrandAd>,
+        loader: ()=>fetch("http://localhost:5000/brands")
       }
     ]
   },
