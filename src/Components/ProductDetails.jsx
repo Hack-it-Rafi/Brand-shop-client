@@ -7,6 +7,29 @@ const ProductDetails = () => {
     // console.log(loadedProducts);
     const products = loadedProducts.filter(product => product._id == id.id);
     console.log(products);
+
+    const {name, brand, price, rating, image, type}=products[0];
+    const cartProduct = {name, brand,price, rating, type, image};
+    console.log(cartProduct);
+
+    const handleAddToCart=()=>{
+        fetch("http://localhost:5000/myCart", {
+        method: "POST",
+        headers: {
+            "content-type": "application/json"
+        },
+        body: JSON.stringify(cartProduct)
+    })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+            if (data.insertedId) {
+                alert("Product added successfully");
+            }
+        })
+    }
+
+    
     return (
         <div className="mt-20">
             <div className="flex max-w-4xl mx-auto gap-10 items-center justify-center">
@@ -19,7 +42,7 @@ const ProductDetails = () => {
                         <p className="font-Young text-xl">Price: <span className="font-sans">{products[0].price}</span></p>
                         <p className="font-Young text-xl">Ratings: <span className="font-sans">{products[0].rating}</span></p>
                     </div>
-                    <button className="btn">Add to cart</button>
+                    <button onClick={handleAddToCart} className="btn">Add to cart</button>
                 </div>
             </div>
             <div className="text-center mt-20">
