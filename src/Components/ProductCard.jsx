@@ -7,6 +7,9 @@ const ProductCard = ({product}) => {
     const handleProductDetail=()=>{
         navigate(`/productDetails/${product._id}`)
     }
+    const handleProductUpdate=()=>{
+        navigate(`/updateProduct/${product._id}`)
+    }
     const {name, image} = product;
     return (
         <div className="flex flex-wrap">
@@ -19,6 +22,9 @@ const ProductCard = ({product}) => {
                     <p>If a dog chews shoes whose shoes does he choose?</p>
                     <div className="card-actions">
                         <button onClick={handleProductDetail} className="btn btn-primary">Buy Now</button>
+                    </div>
+                    <div className="card-actions">
+                        <button onClick={handleProductUpdate} className="btn btn-primary">Buy Now</button>
                     </div>
                 </div>
             </div>
