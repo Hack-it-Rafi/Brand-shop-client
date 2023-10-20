@@ -1,7 +1,20 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import logo from "../../public/pngwing.com.png"
+import { useContext } from "react";
+import { AuthContext } from "../AuthProvider";
 
 const Navbar = () => {
+    const location = useLocation();
+    const { user, loading, logOut } = useContext(AuthContext);
+    if (loading) {
+        return;
+    }
+    console.log(user?.photoURL);
+    const handleLogOut = () => {
+        logOut()
+            .then()
+            .catch();
+    }
 
     const Navlink = <>
         <li><NavLink to="/">Home</NavLink></li>
@@ -30,8 +43,26 @@ const Navbar = () => {
                         {Navlink}
                     </ul>
                 </div>
-                <div className="navbar-end">
-                    <a className="btn">Button</a>
+                <div className="navbar-end gap-4">
+                    {location.pathname != "/login" ? (
+                        user ?
+                            <>
+                                <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                                    <div className="w-10 rounded-full">
+                                        <img src={user?.photoURL} alt="" />
+                                    </div>
+                                </label>
+                                <span>{user?.displayName}</span>
+                                <button onClick={handleLogOut} className="btn z">
+                                    Sign Out
+                                </button>
+                            </>
+                            :
+                            <Link to="/login">
+                                <button className="btn z">Log In</button>
+                            </Link>
+
+                    ) : null}
                 </div>
             </div>
         </div>
