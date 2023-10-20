@@ -3,7 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 // import { AuthContext } from "./AuthProvider";
 import 'react-toastify/dist/ReactToastify.css';
 import Swal from 'sweetalert2'
-import { FcGoogle } from 'react-icons/fc';
+import { GrGithub } from 'react-icons/gr';
 import { AuthContext } from "../../AuthProvider";
 
 const Login = () => {
@@ -45,7 +45,7 @@ const Login = () => {
                 icon: 'success',
                 confirmButtonText: 'Continue'
               })
-            navigate("/");
+            navigate(location?.state ? location.state : '/');
         })
         .catch();
     }
@@ -80,7 +80,7 @@ const Login = () => {
                     </form>
                     <div className="mx-auto text-center">
                         <p className="pb-2">or,</p>
-                        <button onClick={handleGithubSignIn} className="flex gap-2 items-center py-3 px-6 bg-sky-400  rounded-lg"><FcGoogle />
+                        <button onClick={handleGithubSignIn} className="flex gap-2 items-center py-3 px-6 bg-sky-400  rounded-lg"><GrGithub />
                             <span className="text-white font-bold">GitHub</span></button>
                     </div>
                     

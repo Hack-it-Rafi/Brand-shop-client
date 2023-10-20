@@ -5,7 +5,7 @@ const UpdateProduct = () => {
     // const product = useLoaderData();
     console.log(id.id);
 
-    console.log(`http://localhost:5000/products/${id.id}`);
+    console.log(`https://brand-shop-server-rho-seven.vercel.app/products/${id.id}`);
     const handleUpdateProduct=event=>{
         event.preventDefault();
         const form = event.target;
@@ -19,8 +19,8 @@ const UpdateProduct = () => {
         const product = {name, image, brand, type, price, rating};
         // console.log(product);
         
-        fetch(`http://localhost:5000/products/${id.id}`,{
-            method: "PUT",
+        fetch(`https://brand-shop-server-rho-seven.vercel.app/products/${id.id}`,{
+            method: "PATCH",
             headers:{
                 "content-type":"application/json"
             },

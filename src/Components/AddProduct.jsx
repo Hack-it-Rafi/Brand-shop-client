@@ -1,5 +1,5 @@
 const AddProduct = () => {
-    //http://localhost:5000/products
+    //https://brand-shop-server-rho-seven.vercel.app/products
     const handleAddProduct=event=>{
         event.preventDefault();
         const form = event.target;
@@ -14,7 +14,7 @@ const AddProduct = () => {
         const product = {name, image, brand, type, price, rating, description};
         console.log(product);
 
-        fetch('http://localhost:5000/products',{
+        fetch('https://brand-shop-server-rho-seven.vercel.app/products',{
             method: "POST",
             headers:{
                 "content-type":"application/json"

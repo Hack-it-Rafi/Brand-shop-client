@@ -23,7 +23,7 @@ const BrandAd = () => {
     const { image1, image2, image3 } = obj;
 
     useEffect(()=>{
-        fetch("http://localhost:5000/products")
+        fetch("https://brand-shop-server-rho-seven.vercel.app/products")
         .then(res=>res.json())
         .then(data=>{
             console.log(data);

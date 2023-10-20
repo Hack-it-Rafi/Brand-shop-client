@@ -16,11 +16,13 @@ import Login from './Components/Authentication/Login';
 import Register from './Components/Authentication/Register';
 import PrivateRoute from './Components/Authentication/PrivateRoute';
 import AuthProvider from './AuthProvider';
+import ErrorPage from './ErrorPage';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement: <ErrorPage></ErrorPage>,
     children:[
       {
         path: "/",
@@ -34,22 +36,22 @@ const router = createBrowserRouter([
       {
         path: "/myCart",
         element: <PrivateRoute><MyCart></MyCart></PrivateRoute>,
-        loader: ()=>fetch("http://localhost:5000/myCart")
+        loader: ()=>fetch("https://brand-shop-server-rho-seven.vercel.app/myCart")
       },
       {
         path: "/brandAd/:name",
         element: <BrandAd></BrandAd>,
-        loader: ()=>fetch("http://localhost:5000/brands")
+        loader: ()=>fetch("https://brand-shop-server-rho-seven.vercel.app/brands")
       },
       {
         path: "/productDetails/:id",
         element: <PrivateRoute><ProductDetails></ProductDetails></PrivateRoute>,
-        loader: ()=>fetch("http://localhost:5000/products")
+        loader: ()=>fetch("https://brand-shop-server-rho-seven.vercel.app/products")
       },
       {
         path: "/updateProduct/:id",
         element: <PrivateRoute><UpdateProduct></UpdateProduct></PrivateRoute>,
-        loader: ()=>fetch(`http://localhost:5000/products`)
+        loader: ()=>fetch(`https://brand-shop-server-rho-seven.vercel.app/products`)
       },
       {
         path: "/login",

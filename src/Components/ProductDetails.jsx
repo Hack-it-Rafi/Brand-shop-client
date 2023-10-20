@@ -13,7 +13,7 @@ const ProductDetails = () => {
     console.log(cartProduct);
 
     const handleAddToCart=()=>{
-        fetch("http://localhost:5000/myCart", {
+        fetch("https://brand-shop-server-rho-seven.vercel.app/myCart", {
         method: "POST",
         headers: {
             "content-type": "application/json"
@@ -29,7 +29,7 @@ const ProductDetails = () => {
         })
     }
 
-    
+
     return (
         <div className="mt-20">
             <div className="flex max-w-4xl mx-auto gap-10 items-center justify-center">
