@@ -13,7 +13,7 @@ const Root = () => {
     return (
         <ThemeSwitcherProvider defaultTheme="light" themeMap={themes}>
             <div>
-                <div className="max-w-7xl mx-auto">
+                <div className="max-w-7xl mx-auto px-5">
                     <Header></Header>
                     <Navbar></Navbar>
                     <Outlet></Outlet>

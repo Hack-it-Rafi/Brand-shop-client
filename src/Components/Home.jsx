@@ -4,6 +4,7 @@ import Brands from "./Brands";
 import { useThemeSwitcher } from 'react-css-theme-switcher';
 import React from "react";
 import WhyChoseUs from "./WhyChoseUs";
+import ContactUs from "./ContactUs";
 
 
 const Home = () => {
@@ -35,9 +36,13 @@ const Home = () => {
                 <h1 className='text-5xl font-Young'>Brands</h1>
             </div>
             <Brands brands={brands}></Brands>
-            <div className="my-20">
+            <div className="my-20 mb-20">
                 <WhyChoseUs></WhyChoseUs>
             </div>
+            <div className="my-20">
+                <ContactUs></ContactUs>
+            </div>
+            
         </div>
 
     );

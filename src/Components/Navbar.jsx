@@ -5,7 +5,7 @@ import { AuthContext } from "../AuthProvider";
 
 const Navbar = () => {
     const location = useLocation();
-    const { user, loading, logOut } = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
     // if (loading) {
     //     return;
     // }

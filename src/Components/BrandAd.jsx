@@ -33,7 +33,7 @@ const BrandAd = () => {
         // console.log(loadedProducts[0].brand);
     const products = loadedProducts.filter(product=>product.brand?.toLowerCase()==lowerName)
 
-    // console.log(products);
+    console.log(products);
     return (
         <div className=''>
             <div className='h-28'>
@@ -65,9 +65,17 @@ const BrandAd = () => {
                 <h1 className='text-5xl font-Young'>Products</h1>
             </div>
             <div>
-                <div className="grid my-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div>
                     {
-                        products.map(product=><ProductCard key={product._id} product={product}></ProductCard>)
+                        products.length?
+                        <div className="grid my-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                            {
+                                products.map(product=><ProductCard key={product._id} product={product}></ProductCard>)
+                            }
+                        </div>:
+                        <div className='text-center text-xl'>
+                            Sorry, no product available.
+                        </div>
                     }
                 </div>
             </div>

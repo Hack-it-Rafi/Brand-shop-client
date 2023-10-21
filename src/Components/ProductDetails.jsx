@@ -38,7 +38,7 @@ const ProductDetails = () => {
 
     return (
         <div className="mt-20">
-            <div className="flex max-w-4xl mx-auto gap-10 items-center justify-center">
+            <div className="flex flex-col md:flex-row max-w-4xl mx-auto gap-10 items-center justify-center">
                 <div>
                     <img src={products[0].image} alt="Shoes" className="rounded-xl h-[300px]" />
                 </div>

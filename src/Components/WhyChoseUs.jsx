@@ -43,10 +43,10 @@ const WhyChoseUs = () => {
                                     </div>
                                 </div>
                                 <div>
-                                    <h1 className="text-2xl font-bold">To keep learning is Best</h1>
+                                    <h1 className="text-2xl font-bold">Best Dealing</h1>
                                     <div className="w-[70px] h-[2px] bg-slate-400 my-2 mx-auto lg:mx-0"></div>
                                     <p>
-                                        Smooth learning environment to inhance the potential off your desired learning event.
+                                        Smooth dealing environment to inhance the potential off your desired featured product.
                                     </p>
                                 </div>
                             </div>
@@ -57,10 +57,10 @@ const WhyChoseUs = () => {
                                     </div>
                                 </div>
                                 <div>
-                                    <h1 className="text-2xl font-bold">Gift Certificates</h1>
+                                    <h1 className="text-2xl font-bold">Gift Experience</h1>
                                     <div className="w-[70px] h-[2px] bg-slate-400 my-2 mx-auto lg:mx-0"></div>
                                     <p>
-                                        Authorized Certificate to boost up your confidence and help you in long run.
+                                        Authorized Products to boost up your usage and help you in long run.
                                     </p>
                                 </div>
                             </div>
@@ -78,7 +78,7 @@ const WhyChoseUs = () => {
                                     <h1 className="text-2xl font-bold">Integrated Supplier</h1>
                                     <div className="w-[70px] h-[2px] bg-slate-400 my-2 mx-auto lg:mr-0"></div>
                                     <p>
-                                        We are always there help you with the best supplies of educational goods.
+                                        We are always there help you with the best supplies of desired goods.
                                     </p>
                                 </div>
                             </div>
@@ -89,10 +89,10 @@ const WhyChoseUs = () => {
                                     </div>
                                 </div>
                                 <div>
-                                    <h1 className="text-2xl font-bold">Sustainable Practice</h1>
+                                    <h1 className="text-2xl font-bold">Sustainable Goods</h1>
                                     <div className="w-[70px] h-[2px] bg-slate-400 my-2 mx-auto lg:mr-0"></div>
                                     <p>
-                                        Learning and development criteria are enforced to bring out the  talent within you.
+                                        Learning and development criteria are enforced to bring out the  talent within US.
                                     </p>
                                 </div>
                             </div>

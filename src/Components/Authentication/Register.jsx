@@ -120,11 +120,11 @@ const Register = () => {
                         success && <p className="text-green-600">{success}</p>
                     }
 
-                    <div className="mx-auto text-center">
+                    {/* <div className="mx-auto text-center">
                         <p className="pb-2">or,</p>
                         <button onClick={handleGithubSignIn} className="flex gap-2 items-center py-3 px-6 bg-sky-400  rounded-lg"><GrGithub />
                             <span className="text-white font-bold">GitHub</span></button>
-                    </div>
+                    </div> */}
                     <p className="mt-4 text-center">Already have an account? <Link className="text-blue-600" to="/login">Login</Link></p>
                 </div>
             </div>
