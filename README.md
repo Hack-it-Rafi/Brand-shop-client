@@ -1,9 +1,16 @@
-# React + Vite
+# b8a10-brandshop-client-side-Hack-it-Rafi
+#
+# https://my-brand-shop-r.web.app
+#
+#
+#
+# Project Features:
+1. Website name: RECTO
+2. Email/Password & GitHub bases authentication.
+3. Initial Products data were manually added to mongoDB. However, User can also add data according to relative brands.
+4. User can Select products to add to their cart and watch them in "My Cart" section.
+5. Product Details, Add Product, My Cart,,, These pages are private. USer should be logged in to view these pages.
+6. It is a Responsive website. User can view it in mobile, tablet and in Large screens.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-"# b8a10-brandshop-client-side-Hack-it-Rafi" 
+# Happy Browsing
