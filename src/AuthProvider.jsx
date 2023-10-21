@@ -15,9 +15,11 @@ const AuthProvider = ({ children }) => {
     }
 
     const googleSignIn = () => {
+        setLoading(true);
         return signInWithPopup(auth, provider);
     }
     const githubSignIn = () => {
+        setLoading(true);
         return signInWithPopup(auth, githubProvider);
     }
     const signIn = (email, password) => {
@@ -26,6 +28,7 @@ const AuthProvider = ({ children }) => {
     }
 
     const updateUser = (name, photo) => {
+        setLoading(true);
         return updateProfile(auth.currentUser, {
             displayName: name, photoURL: photo
         });

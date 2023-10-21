@@ -1,11 +1,16 @@
-import { useParams } from "react-router-dom";
+import { useLoaderData, useNavigate, useParams } from "react-router-dom";
+import Swal from 'sweetalert2'
 
 const UpdateProduct = () => {
     const id = useParams();
+    const navigate = useNavigate();
     // const product = useLoaderData();
     console.log(id.id);
+    const loadedProducts = useLoaderData();
+    const loadedProduct = loadedProducts.filter(product => product._id == id.id);
+    console.log(loadedProduct);
 
-    console.log(`https://brand-shop-server-rho-seven.vercel.app/products/${id.id}`);
+    // console.log(`https://brand-shop-server-rho-seven.vercel.app/products/${id.id}`);
     const handleUpdateProduct=event=>{
         event.preventDefault();
         const form = event.target;
@@ -30,8 +35,14 @@ const UpdateProduct = () => {
         .then(data=>{
             console.log(data);
             if(data.modifiedCount>0){
-                alert("Product updated successfully");
+                Swal.fire({
+                    title: 'Update Successful!',
+                    text: 'Enjoy Exploring!',
+                    icon: 'success',
+                    confirmButtonText: 'Continue'
+                });
                 form.reset();
+                navigate(-1);
             }
         })
         .catch(error=>console.error(error))
@@ -50,13 +61,13 @@ const UpdateProduct = () => {
                                 <label className="label">
                                     <span className="label-text">Product name</span>
                                 </label>
-                                <input type="text" required placeholder="Type here" name="name" className="input input-bordered w-full" />
+                                <input type="text" required defaultValue={loadedProduct[0].name} placeholder="Type here" name="name" className="input input-bordered w-full" />
                             </div>
                             <div className="form-control w-full">
                                 <label className="label">
                                     <span className="label-text">Image URL</span>
                                 </label>
-                                <input type="text" required placeholder="Type here" name="image" className="input input-bordered w-full" />
+                                <input type="text" required defaultValue={loadedProduct[0].image} placeholder="Type here" name="image" className="input input-bordered w-full" />
                             </div>
                         </div>
                         <div className="flex gap-4 md:gap-10">
@@ -64,13 +75,13 @@ const UpdateProduct = () => {
                                 <label className="label">
                                     <span className="label-text">Brand Name</span>
                                 </label>
-                                <input type="text" required placeholder="Type here" name="brand" className="input input-bordered w-full" />
+                                <input type="text" required defaultValue={loadedProduct[0].brand} placeholder="Type here" name="brand" className="input input-bordered w-full" />
                             </div>
                             <div className="form-control w-full">
                                 <label className="label">
                                     <span className="label-text">Type</span>
                                 </label>
-                                <input type="text" required placeholder="Type here" name="type" className="input input-bordered w-full" />
+                                <input type="text" required defaultValue={loadedProduct[0].type} placeholder="Type here" name="type" className="input input-bordered w-full" />
                             </div>
                         </div>
                         <div className="flex gap-4 md:gap-10">
@@ -78,13 +89,13 @@ const UpdateProduct = () => {
                                 <label className="label">
                                     <span className="label-text">Price</span>
                                 </label>
-                                <input type="text" required placeholder="Type here" name="price" className="input input-bordered w-full" />
+                                <input type="text" required defaultValue={loadedProduct[0].price} placeholder="Type here" name="price" className="input input-bordered w-full" />
                             </div>
                             <div className="form-control w-full">
                                 <label className="label">
                                     <span className="label-text">Rating</span>
                                 </label>
-                                <input type="text" required placeholder="Type here" name="rating" className="input input-bordered w-full" />
+                                <input type="text" required defaultValue={loadedProduct[0].rating} placeholder="Type here" name="rating" className="input input-bordered w-full" />
                             </div>
                         </div>
                         

@@ -61,8 +61,11 @@ const BrandAd = () => {
                     </div></SwiperSlide>
                 </Swiper>
             </div>
+            <div className='text-center my-10'>
+                <h1 className='text-5xl font-Young'>Products</h1>
+            </div>
             <div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div className="grid my-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                     {
                         products.map(product=><ProductCard key={product._id} product={product}></ProductCard>)
                     }

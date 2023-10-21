@@ -6,9 +6,9 @@ import { AuthContext } from "../AuthProvider";
 const Navbar = () => {
     const location = useLocation();
     const { user, loading, logOut } = useContext(AuthContext);
-    if (loading) {
-        return;
-    }
+    // if (loading) {
+    //     return;
+    // }
     console.log(user?.photoURL);
     const handleLogOut = () => {
         logOut()
@@ -26,7 +26,7 @@ const Navbar = () => {
 
     return (
         <div>
-            <div className="navbar bg-base-100">
+            <div className="navbar bg-base-200 rounded-xl">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">

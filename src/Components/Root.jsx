@@ -2,17 +2,25 @@ import { Outlet } from "react-router-dom";
 import Header from "./Header";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import { ThemeSwitcherProvider } from 'react-css-theme-switcher';
+
+const themes = {
+    light: 'public/light.css',
+    dark: 'public/dark.css',
+};
 
 const Root = () => {
     return (
-        <div>
-            <div className="max-w-7xl mx-auto">
-            <Header></Header>
-            <Navbar></Navbar>
-            <Outlet></Outlet>
+        <ThemeSwitcherProvider defaultTheme="light" themeMap={themes}>
+            <div>
+                <div className="max-w-7xl mx-auto">
+                    <Header></Header>
+                    <Navbar></Navbar>
+                    <Outlet></Outlet>
+                </div>
+                <Footer></Footer>
             </div>
-            <Footer></Footer>
-        </div>
+        </ThemeSwitcherProvider >
     );
 };
 

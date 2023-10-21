@@ -1,16 +1,16 @@
 import { useNavigate } from "react-router-dom";
 
-const ProductCard = ({product}) => {
+const ProductCard = ({ product }) => {
     console.log(product);
-    const navigate= useNavigate();
+    const navigate = useNavigate();
 
-    const handleProductDetail=()=>{
+    const handleProductDetail = () => {
         navigate(`/productDetails/${product._id}`)
     }
-    const handleProductUpdate=()=>{
+    const handleProductUpdate = () => {
         navigate(`/updateProduct/${product._id}`)
     }
-    const {name, image} = product;
+    const { name, image, brand, price, rating, type } = product;
     return (
         <div className="flex flex-wrap">
             <div className="card  bg-base-100 shadow-xl">
@@ -19,12 +19,19 @@ const ProductCard = ({product}) => {
                 </figure>
                 <div className="card-body items-center text-center">
                     <h2 className="card-title">{name}</h2>
-                    <p>If a dog chews shoes whose shoes does he choose?</p>
-                    <div className="card-actions">
-                        <button onClick={handleProductDetail} className="btn btn-primary">Buy Now</button>
+                    <p>{brand}</p>
+                    <p>{type}</p>
+                    <div className="flex gap-28">
+                    <p><span className="font-bold">Ratings:</span> {rating}</p>
+                    <p><span className="font-bold">Price:</span> {price}</p>
                     </div>
-                    <div className="card-actions">
-                        <button onClick={handleProductUpdate} className="btn btn-primary">Buy Now</button>
+                    <div className="flex gap-40">
+                        <div className="card-actions">
+                            <button onClick={handleProductDetail} className="btn btn-primary">Details</button>
+                        </div>
+                        <div className="card-actions">
+                            <button onClick={handleProductUpdate} className="btn btn-primary">Update</button>
+                        </div>
                     </div>
                 </div>
             </div>

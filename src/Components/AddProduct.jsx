@@ -1,3 +1,4 @@
+import Swal from 'sweetalert2'
 const AddProduct = () => {
     //https://brand-shop-server-rho-seven.vercel.app/products
     const handleAddProduct=event=>{
@@ -25,7 +26,12 @@ const AddProduct = () => {
         .then(data=>{
             console.log(data);
             if(data.insertedId){
-                alert("Product added successfully");
+                Swal.fire({
+                    title: 'Product Added!',
+                    text: 'Enjoy Exploring!',
+                    icon: 'success',
+                    confirmButtonText: 'Continue'
+                });
                 form.reset();
             }
         })
@@ -48,7 +54,7 @@ const AddProduct = () => {
                             </div>
                             <div className="form-control w-full">
                                 <label className="label">
-                                    <span className="label-text">Image URL</span>
+                                    <span className="label-text">Image UURL</span>
                                 </label>
                                 <input type="text" required placeholder="Type here" name="image" className="input input-bordered w-full" />
                             </div>

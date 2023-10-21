@@ -4,15 +4,16 @@ import { useContext, useState } from "react";
 import { GrGithub } from 'react-icons/gr';
 import Swal from 'sweetalert2'
 import { AuthContext } from "../../AuthProvider";
-import { getAuth, updateProfile } from "firebase/auth";
+import { getAuth } from "firebase/auth";
 import app from "../../firebase.config";
 
 const auth = getAuth(app);
 const Register = () => {
+    console.log(auth);
     const [registerError, setRegisterError] = useState('');
     const [success, setSuccess] = useState('');
     const navigate = useNavigate();
-    const { createUser, githubSignIn } = useContext(AuthContext);
+    const { createUser, updateUser, githubSignIn } = useContext(AuthContext);
     const handleRegister = (e) => {
         e.preventDefault();
         const name = e.target.name.value;
@@ -46,20 +47,18 @@ const Register = () => {
                     icon: 'success',
                     confirmButtonText: 'Continue'
                 });
-                navigate("/");
+                updateUser(name, photo)
+                    .then(() => console.log("hello"))
+                    .catch(error => {
+                        setRegisterError(error.code);
+                    });
+                navigate("/login");
                 setSuccess('User Created Successfully.');
             })
             .catch(error => console.error(error));
 
 
-        updateProfile(auth.currentUser, {
-            displayName: name, photoURL: photo
-        })
-            .then(console.log("successful"))
-            .catch(error => {
-                console.log(error);
-                setRegisterError(error.code);
-            });
+
     }
     const handleGithubSignIn = () => {
         githubSignIn()
